@@ -34,8 +34,8 @@ def send_alert(alert_type):
 
         component = st.session_state.selected_component.replace("%", ":")
 
-        from_address = 'cc.angel88@gmail.com'
-        to_address = 'angel.carreon@ibtest.com'
+        from_address = '<your_source_address>88@gmail.com'
+        to_address = '<your_destination_address>@ibtest.com'
         
         subject = f'Alert automatic from streamlit - {project_name}'
         message = f'Subject: {subject} \n{max_fails_reached} critical failures detected while running production series.\n\n'
