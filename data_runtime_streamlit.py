@@ -71,12 +71,11 @@ def send_alert(alert_type):
     else:
         st.success('Sending Telegram notification')
             
-        api_token = '5669323375:AAGsoWz_itZlsOs4vFOF_QSl_gfmU43vUBs'
+        api_token = 'YYYYYYYYYY:ZZZZZ'
         
         get_chat_id(api_token)
         
-        chat_id = '5212122181'
-        chat_id_group = '-837331912'
+        chat_id_group = '-XXXXXXXXX'
         
         max_fails_reached = st.session_state["max_fails"] 
         
