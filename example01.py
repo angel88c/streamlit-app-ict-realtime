@@ -2,6 +2,15 @@ import smtplib
 import json
 import requests
 import streamlit as st
+import orm_sqlite
+
+class ICT_Data(orm_sqlite.Model):
+    id = orm_sqlite.IntegerField(primary_key=True)
+    part_number = orm_sqlite.StringField()
+    serial_number = orm_sqlite.StringField()
+    status = orm_sqlite.IntegerField()
+    field_data = orm_sqlite.StringField()
+    created_date = orm_sqlite.StringField()
 
 def get_chat_id(api_token):
 
@@ -18,7 +27,6 @@ def send_alert(alert_type):
             
     if alert_type == "Email":
         st.warning('Sending email notification')
-
 
         from_address = 'angel.carreon@ibtest.com'
         to_address = 'cc.angel88@gmail.com'
@@ -107,3 +115,13 @@ with column2:
     alert_type = st.selectbox("Alert type",['Email', 'Telegram'])
         
     st.button("Send Alert", on_click=send_alert, args=[alert_type], type="primary")
+    
+
+#database_file = "/Volumes/Shared/simulate_test/test_streamlit_database.db"
+database_file = "/Users/c_angel/Documents/python/python-sqlite/test_streamlit_database.db"
+
+db = orm_sqlite.Database(database_file)
+    
+ICT_Data.objects.backend = db
+objects = ICT_Data.objects.all()
+st.dataframe(objects)
