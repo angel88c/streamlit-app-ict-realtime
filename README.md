@@ -56,6 +56,17 @@ You need to enable less secure apps permissions to your web browser, access from
 
 Set the source and destination gmail account in order to setup the service.
 
+```python
+from_address = '<your_source_address>88@gmail.com'
+to_address = '<your_destination_address>@ibtest.com'
+    
+subject = f'Alert automatic from streamlit - {project_name}'
+message = f'Subject: {subject} \n{max_fails_reached} critical failures detected while running production series.\n\n'
+message = f'{message}  Project: {project_name}\n\n'
+message = f'{message}  Machine: {machine_name}\n\n'
+message = f'{message}Component: {component}\n\n'
+```
+
 
 Finally, you can run the application with command: 
 
