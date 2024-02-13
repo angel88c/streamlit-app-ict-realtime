@@ -9,6 +9,10 @@ git clone https://github.com/angel88c/streamlit-app-ict-realtime
 
 go to the folder
 
+````
+cd streamlit-app-ict-realtime/
+````
+
 ## Setup
 
 Create a virtual environment with the command:
@@ -24,7 +28,7 @@ Install the requirements:
 pip install -r requirements.txt
 ```
 
-Once installed requirements, Proceed to setup the base of Telegram bot and gmail.
+Once installed requirements, Proceed to setup the base of Telegram bot and gmail service.
 
 ## Setup Telegram bot
 To set up the telegram bot, follow next useful guide in order to create the bot, and generate our **api_token** and **chat_id_group**
@@ -58,7 +62,7 @@ Set the source and destination gmail account in order to setup the service.
 
 ```python
 from_address = '<your_source_address>88@gmail.com'
-to_address = '<your_destination_address>@ibtest.com'
+to_address = '<your_destination_address>@gmail.com'
     
 subject = f'Alert automatic from streamlit - {project_name}'
 message = f'Subject: {subject} \n{max_fails_reached} critical failures detected while running production series.\n\n'

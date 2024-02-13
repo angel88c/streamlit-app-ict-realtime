@@ -43,8 +43,8 @@ def send_alert(alert_type):
         message = f'{message}  Machine: {machine_name}\n\n'
         message = f'{message}Component: {component}\n\n'
         
-        username = 'angel.carreon@ibtest.com'
-        password = 'programacion2'
+        username =  '<your_source_address>88@gmail.com'
+        password = '*******************'
 
         try:
             server_gmail = smtplib.SMTP('smtp.gmail.com:587')
